@@ -1,0 +1,8 @@
+@import "./bases/bases";
+@import "./layouts/layouts";
+
+@keyframes circle-moves {
+  100% {
+    top: -10vh;
+  }
+}

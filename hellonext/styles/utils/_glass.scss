@@ -1,0 +1,8 @@
+$glass-opacity: 0.6;
+$glass-blur: 12px;
+
+@mixin glass($color: #fff, $opacity: $glass-opacity, $blur: $glass-blur) {
+  background: rgba($color, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+}

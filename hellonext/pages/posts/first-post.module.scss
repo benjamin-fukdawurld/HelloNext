@@ -1,0 +1,12 @@
+.container {
+  min-width: 280px;
+  width: 30%;
+  min-height: 32rem;
+  background: rgba(128, 128, 255, 0.65);
+  backdrop-filter: blur(14px);
+  border-radius: 1rem;
+  margin: 1rem auto;
+  z-index: 99;
+  padding: 1rem 2rem;
+  text-align: justify;
+}

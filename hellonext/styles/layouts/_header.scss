@@ -1,0 +1,45 @@
+.header {
+  z-index: 100;
+  @apply fixed top-0 w-full;
+  @apply p-4 shadow-lg flex;
+
+  @include glass(rgb(209, 213, 219), 0.8, 6px);
+
+  &__left-panel {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+  }
+
+  &__right-panel {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.profile-image {
+  border-radius: 100%;
+  @apply h-8 w-8 md:h-12 md:w-12;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    border-radius: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover:after {
+    transform: scale(1.05);
+  }
+}

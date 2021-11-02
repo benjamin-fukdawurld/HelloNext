@@ -1,0 +1,13 @@
+@mixin circle($size, $color) {
+  width: $size;
+  height: $size;
+  background: linear-gradient(234deg, $color 35%, $appcolor);
+  border-radius: 100%;
+}
+
+@for $i from 0 through 10 {
+  .circle-#{$i} {
+    @include circle(#{(($i + 1) * 4)}rem, red);
+    position: absolute;
+  }
+}
