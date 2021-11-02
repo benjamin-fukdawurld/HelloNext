@@ -52,4 +52,29 @@ const HomeLink = styled.div`
   }
 `;
 
+const ProfileImage = styled.div`
+  border-radius: 100%;
+  height: 2rem; width: 2rem;
+  md:h-12 md:w-12;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: " ";
+    position: absolute;
+    border-radius: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(0);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:hover:after {
+    transform: scale(1.05);
+  }
+`;
+
 export { HeaderContainer, LeftPanel, RightPanel, HomeLink };
