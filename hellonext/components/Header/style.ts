@@ -28,17 +28,13 @@ const RightPanel = styled.div`
 
 const textPopUpTop = keyframes`
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    transform: translateY(0);
+    transform-origin: 50% 50%;
     text-shadow: none;
   }
   100% {
-    -webkit-transform: translateY(-12px);
-            transform: translateY(-12px);
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    transform: translateY(-12px);
+    transform-origin: 50% 50%;
     text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc, 0 4px 0 #cccccc, 0 5px 0 #cccccc, 0 6px 8px rgba(0, 0, 0, 0.3);
   }
 `;
@@ -54,8 +50,12 @@ const HomeLink = styled.div`
 
 const ProfileImage = styled.div`
   border-radius: 100%;
-  height: 2rem; width: 2rem;
-  md:h-12 md:w-12;
+  height: 2rem;
+  width: 2rem;
+  @media (min-width: 768px) {
+    height: 3rem;
+    width: 3rem;
+  }
   overflow: hidden;
   position: relative;
 
@@ -77,4 +77,4 @@ const ProfileImage = styled.div`
   }
 `;
 
-export { HeaderContainer, LeftPanel, RightPanel, HomeLink };
+export { HeaderContainer, LeftPanel, RightPanel, HomeLink, ProfileImage };

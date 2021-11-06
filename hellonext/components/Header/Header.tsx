@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { HeaderContainer, LeftPanel, RightPanel, HomeLink } from "./style";
+import { HeaderContainer, LeftPanel, RightPanel, HomeLink, ProfileImage } from "./style";
 
 export default function Header(props: any) {
   return (
@@ -18,9 +18,9 @@ export default function Header(props: any) {
         </HomeLink>
       </LeftPanel>
       <RightPanel>
-        <div className="profile-image">
+        <ProfileImage>
           <Image src="/images/profile.jpg" layout="fill" objectFit="cover" alt="profile image" />
-        </div>
+        </ProfileImage>
       </RightPanel>
     </HeaderContainer>
   );

@@ -1,10 +1,6 @@
-import { useState } from "react";
-
-import type { WaterDropProps } from "./utils/WaterDrop/interfaces";
-
-import styles from "./Circle.module.scss";
-
-import styled, { css, keyframes } from "styled-components";
+import type { WaterDropProps } from "./interfaces";
+import styled, { css } from "styled-components";
+import { slideInBckCenter } from "../../styles/animations";
 
 function radiusesGenerator() {
   const radiuses = [...Array(4)].map((undefined, index) => {
@@ -18,19 +14,6 @@ function radiusesGenerator() {
   );
 }
 
-const slideInBckCenter = keyframes`
-  0% {
-    -webkit-transform: translateZ(600px);
-    transform: translateZ(600px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    opacity: 1;
-  }
-`;
-
 const Drop = styled.div<any & WaterDropProps>`
   ${(props: WaterDropProps) => css`
     width: ${props.size};
@@ -38,7 +21,7 @@ const Drop = styled.div<any & WaterDropProps>`
     border-radius: ${radiusesGenerator()};
     background: ${props.color};
     box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05), 15px 25px 10px rgba(0, 0, 0, 0.1),
-      15px 20px 20px rgba(0, 0, 0, 0.05), inset -10px -10px 15px rgba(255, 255, 255, 0.9);
+      15px 20px 20px rgba(0, 0, 0, 0.05), inset -10px -10px 15px rgba(255, 255, 255, 0.4);
     position: absolute;
     z-index: ${props.pos.z};
     top: ${props.pos.y}px;
@@ -65,11 +48,4 @@ const Shininess = styled.div`
   `}
 `;
 
-export default function WaterDrop(props: WaterDropProps) {
-  return (
-    <Drop className={styles["water-drop"]} {...props}>
-      <Shininess y="20%" x="24%" h="10%" w="10%" />
-      <Shininess y="28%" x="38%" h="6%" w="6%" />
-    </Drop>
-  );
-}
+export { Drop, Shininess };

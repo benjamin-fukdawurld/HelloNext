@@ -8,7 +8,7 @@ const GlassSurface = styled.div<any & GlassSurfaceProps>`
   ${(props) => `
     position: relative;
     background-color: ${colorToString(props.glassColor)};
-    backdrop-filter: saturate(150%) blur(${props.blur}px);
+    backdrop-filter: saturate(80%) blur(${props.blur}px);
     border: 1px outset ${colorToString(props.borderColor)};
   `}
 `;
